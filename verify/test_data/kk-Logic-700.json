@@ -1,0 +1,21 @@
+{
+  "data_source": "kk_logic",
+  "prompt": [
+    {
+      "content": "The reasoning process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., <think> reasoning process here </think><answer> answer here </answer>. Now the user asks you to solve a logical reasoning problem. After thinking, when you finally reach a conclusion, clearly state the identity of each character within <answer> </answer> tags. List the identity of each person one by one, for example, <answer> (1) Zoey is a knight\n(2) Oliver is a knight\n(3)... </answer>.\n\nA very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Zoey, and Oliver. Zoey remarked, \"Oliver is not a knight\". Oliver stated, \"Oliver is a knight if and only if Zoey is a knave\". So who is a knight and who is a knave?",
+      "role": "user"
+    }
+  ],
+  "ability": "logic",
+  "reward_model": {
+    "ground_truth": {
+      "solution_text_format": "(1) Zoey is a knave\n(2) Oliver is a knight",
+      "statements": "(('not', ('telling-truth', 1)), ('<=>', ('telling-truth', 1), ('lying', 0)))"
+    },
+    "style": "rule"
+  },
+  "extra_info": {
+    "index": 0,
+    "split": "test"
+  }
+}

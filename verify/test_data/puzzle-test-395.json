@@ -1,0 +1,20 @@
+{
+  "prompt": [
+    {
+      "content": "You are tasked with solving a Binario Puzzle.\n\n### Rules:\n1. The Binario puzzle is played on a grid of size NxN, where N is an even number.\n2. Each cell in the grid must be filled with either a 0 or a 1.\n3. No more than half of the cells in any row or column can contain the same number.\n4. No more than two identical numbers can be adjacent horizontally or vertically.\n5. The puzzle must have a unique solution.\n\n### Task:\nSolve the following Binario puzzle by filling in the missing cells (denoted by '_') with 0s and 1s according to the rules above.\n\n### Response Format:\n- Please output your answer within a code block (```), formatted as a grid of numbers, for example:\n```\n1 0 0 1\n0 1 1 0\n1 0 1 0\n0 1 0 1\n```\n- If no solution exists, output within the code block:\n```\nNo valid solution exists for the given Binario puzzle.\n```\n\nHere is the puzzle: \n_ 0 1 1\n_ 0 1 1\n1 1 0 0\n1 1 0 _",
+      "role": "user"
+    }
+  ],
+  "ability": "binario",
+  "data_source": "PUZZLE",
+  "reward_model": {
+    "ground_truth": "{\"id\": \"3f64158bd91387410cd30655433c4aa3\", \"question\": \"_ 0 1 1\\n_ 0 1 1\\n1 1 0 0\\n1 1 0 _\", \"answer\": \"0 0 1 1\\n0 0 1 1\\n1 1 0 0\\n1 1 0 0\", \"rationale\": \"\", \"split\": \"test\", \"type\": \"PUZZLE\", \"source_url\": \"auto-generated\", \"dataset_name\": \"binario\", \"difficulty_level\": \"easy\", \"language\": \"en\", \"task_name\": \"binario\"}",
+    "style": "rule"
+  },
+  "extra_info": {
+    "answer": "{\"__wrapped__\": true, \"value\": \"0 0 1 1\\n0 0 1 1\\n1 1 0 0\\n1 1 0 0\"}",
+    "index": 0,
+    "split": "test",
+    "task_name": "binario"
+  }
+}

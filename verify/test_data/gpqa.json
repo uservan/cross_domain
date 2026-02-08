@@ -1,0 +1,18 @@
+{
+  "data_source": "gpqa-science",
+  "prompt": [
+    {
+      "content": "Solve the following problem. Make sure to put the answer (and only answer) inside \\boxed{{}}.\n\nTwo quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they can be clearly resolved?\n\nA) 10^-9 eV, B) 10^-8 eV\n, C) 10^-4 eV, D) 10^-11 eV",
+      "role": "user"
+    }
+  ],
+  "ability": "science",
+  "reward_model": {
+    "ground_truth": "C",
+    "style": "rule"
+  },
+  "extra_info": {
+    "index": 0,
+    "split": "test"
+  }
+}
