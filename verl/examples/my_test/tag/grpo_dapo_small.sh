@@ -5,8 +5,8 @@
 #SBATCH --gres=gpu:8
 #SBATCH -n 96
 #SBATCH --mem=256G
-#SBATCH --output=/scratch/pioneer/jobs/wxy320/verl/log/my_test/tag/qwen_rope_%A_%a.txt
-#SBATCH --error=/scratch/pioneer/jobs/wxy320/verl/log/my_test/tag/qwen_rope_%A_%a.txt
+#SBATCH --output=/scratch/pioneer/jobs/user/verl/log/my_test/tag/qwen_rope_%A_%a.txt
+#SBATCH --error=/scratch/pioneer/jobs/user/verl/log/my_test/tag/qwen_rope_%A_%a.txt
 #SBATCH --time=13-00:00:00
 #SBATCH --exclude=aisciit05
 
@@ -99,7 +99,7 @@ entropy_checkpointing=true # This enables entropy recomputation specifically for
 #     python examples/data_preprocess/gsm8k.py --local_save_dir /data/gsm8k/
 # fi
 
-DATA_DIR=/scratch/pioneer/jobs/wxy320/verl/data
+DATA_DIR=/scratch/pioneer/jobs/user/verl/data
 math_test_path=data/test_data/MATH-500.parquet
 aime24_test_path=data/test_data/aime24.parquet
 aime25_test_path=data/test_data/aime25.parquet
@@ -128,7 +128,7 @@ project_name='Tag-GRPO2'
 MODEL_PATH=Qwen/Qwen3-4B #Qwen/Qwen3-4B-Base # Qwen/Qwen3-4B
 SFT_MODEL=$(basename $MODEL_PATH)
 exp_name="${loss_mode}-${SFT_MODEL}-math1-${tag}"
-CKPTS_DIR=/scratch/pioneer/jobs/wxy320/verl/model/${project_name}/${exp_name}
+CKPTS_DIR=/scratch/pioneer/jobs/user/verl/model/${project_name}/${exp_name}
 save_contents="['model']" # "['hf_model']"
 reward_path=verl/utils/reward_score/math_dapo.py
 #  trainer.rollout_data_dir=${DATA_DIR}/rollout_data/$project_name/$exp_name \
@@ -207,6 +207,6 @@ nohup python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.actor.checkpoint.save_contents=${save_contents} \
     trainer.resume_mode=auto \
     trainer.log_val_generations=2 \
-    > /scratch/pioneer/jobs/wxy320/verl/log/my_test/tag/${exp_name}.log 2>&1
+    > /scratch/pioneer/jobs/user/verl/log/my_test/tag/${exp_name}.log 2>&1
 
 # sleep infinity

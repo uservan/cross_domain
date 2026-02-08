@@ -9,7 +9,7 @@ import argparse
 registried_tasks = {}
 def registried():
     try:
-        folder_path = '/home/wxy320/ondemand/program/verify/score/puzzle_tasks'
+        folder_path = '/home/user/ondemand/program/verify/score/puzzle_tasks'
         for task in os.listdir(folder_path):
             if os.path.isdir(os.path.join(folder_path, task)):
                 try:

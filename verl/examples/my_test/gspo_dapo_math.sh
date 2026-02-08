@@ -5,8 +5,8 @@
 #SBATCH --gres=gpu:8
 #SBATCH -n 96
 #SBATCH --mem=256G
-#SBATCH --output=/scratch/pioneer/jobs/wxy320/verl/slurm/qwen_rope_%A_%a.txt
-#SBATCH --error=/scratch/pioneer/jobs/wxy320/verl/slurm/qwen_rope_%A_%a.txt
+#SBATCH --output=/scratch/pioneer/jobs/user/verl/slurm/qwen_rope_%A_%a.txt
+#SBATCH --error=/scratch/pioneer/jobs/user/verl/slurm/qwen_rope_%A_%a.txt
 #SBATCH --time=13-00:00:00
 
 set -xeuo pipefail
@@ -79,7 +79,7 @@ project_name='RL-GSPO'
 MODEL_PATH=Qwen/Qwen3-8B-Base
 SFT_MODEL=$(basename $MODEL_PATH)
 exp_name="${loss_mode}-epslow-${clip_ratio_low}-epshigh-${clip_ratio_high}-${SFT_MODEL}-RL"
-CKPTS_DIR=/scratch/pioneer/jobs/wxy320/verl/model/${project_name}/${exp_name}
+CKPTS_DIR=/scratch/pioneer/jobs/user/verl/model/${project_name}/${exp_name}
 save_contents="['hf_model']"
 
 # Sampling params at rollouts
@@ -104,7 +104,7 @@ entropy_checkpointing=true # This enables entropy recomputation specifically for
 #     python examples/data_preprocess/gsm8k.py --local_save_dir /data/gsm8k/
 # fi
 
-DATA_DIR=/scratch/pioneer/jobs/wxy320/verl/data
+DATA_DIR=/scratch/pioneer/jobs/user/verl/data
 gsm8k_test_path=data/test_data/gsm8k_test.parquet
 math_test_path=data/test_data/math500.parquet
 amc23_test_path=data/test_data/amc23.parquet
@@ -197,4 +197,4 @@ nohup python3 -m verl.trainer.main_ppo \
     trainer.rollout_data_dir=${DATA_DIR}/rollout_data/$project_name/$exp_name \
     trainer.resume_mode=auto \
     trainer.log_val_generations=2 \
-    > /scratch/pioneer/jobs/wxy320/verl/log/my_test/${exp_name}.log 2>&1
+    > /scratch/pioneer/jobs/user/verl/log/my_test/${exp_name}.log 2>&1

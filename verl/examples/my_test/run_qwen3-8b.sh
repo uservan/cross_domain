@@ -5,8 +5,8 @@
 #SBATCH --gres=gpu:8
 #SBATCH -n 96
 #SBATCH --mem=256G
-#SBATCH --output=/scratch/pioneer/jobs/wxy320/verl/slurm/qwen_rope_%A_%a.txt
-#SBATCH --error=/scratch/pioneer/jobs/wxy320/verl/slurm/qwen_rope_%A_%a.txt
+#SBATCH --output=/scratch/pioneer/jobs/user/verl/slurm/qwen_rope_%A_%a.txt
+#SBATCH --error=/scratch/pioneer/jobs/user/verl/slurm/qwen_rope_%A_%a.txt
 #SBATCH --time=13-00:00:00
 
 # Tested successfully on the hiyouga/verl:ngc-th2.6.0-cu126-vllm0.8.4-flashinfer0.2.2-cxx11abi0 image.
@@ -19,7 +19,7 @@ export PYTHONHASHSEED=0
 save_contents="['hf_model']"
 
 # 先定义数据目录
-DATA_DIR=/scratch/pioneer/jobs/wxy320/verl/data
+DATA_DIR=/scratch/pioneer/jobs/user/verl/data
     # data.train_files=$DATA_DIR/train.parquet \
     # data.val_files=$DATA_DIR/test.parquet \
 
@@ -87,4 +87,4 @@ nohup python3 -m verl.trainer.main_ppo \
     trainer.save_freq=400 \
     trainer.test_freq=5 \
     trainer.total_epochs=10 \
-    > /scratch/pioneer/jobs/wxy320/verl/log/my_test/${experiment_name}.log 2>&1
+    > /scratch/pioneer/jobs/user/verl/log/my_test/${experiment_name}.log 2>&1

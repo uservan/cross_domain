@@ -4,7 +4,7 @@
 set -x
 
 # 先定义数据目录
-DATA_DIR=/scratch/pioneer/jobs/wxy320/verl/data/gsm8k
+DATA_DIR=/scratch/pioneer/jobs/user/verl/data/gsm8k
 
 # Number of CPUs for Ray. Use a fixed number instead of null when using SLURM.
 export PYTHONUNBUFFERED=1
@@ -35,4 +35,4 @@ nohup python3 -m verl.trainer.main_ppo \
     trainer.save_freq=100 \
     trainer.test_freq=100 \
     trainer.total_epochs=15 \
-    2>&1 | tee /scratch/pioneer/jobs/wxy320/verl/log/verl_demo.log & $@
+    2>&1 | tee /scratch/pioneer/jobs/user/verl/log/verl_demo.log & $@

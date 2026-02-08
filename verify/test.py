@@ -10,7 +10,7 @@ from transformers import AutoTokenizer
 
 from score import default_compute_score
 
-project_root = "/home/wxy320/ondemand/program/verify"
+project_root = "/home/user/ondemand/program/verify"
 
 
 def get_category_data(category: str, max_samples: int = -1) -> List[Dict[str, Any]]:
@@ -48,7 +48,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--model",
-        default="/scratch/pioneer/jobs/wxy320/verl/model/MIX-REWARD-GRPO-SMALL-Normal-merge/Qwen3-4B-Base-science-puzzle-math",
+        default="/scratch/pioneer/jobs/user/verl/model/MIX-REWARD-GRPO-SMALL-Normal-merge/Qwen3-4B-Base-science-puzzle-math",
         help="HF repo id or local path for vLLM",
     )
     parser.add_argument("--dataset", default="science", choices=["skywork_math", "PUZZLE", "science", "kk"])
@@ -61,7 +61,7 @@ def main():
     # ✅ NEW: number of generations per problem
     parser.add_argument("--n", type=int, default=5, help="number of generations per problem")
 
-    parser.add_argument("--save_path", type=str, default="/scratch/pioneer/jobs/wxy320/verl/base")
+    parser.add_argument("--save_path", type=str, default="/scratch/pioneer/jobs/user/verl/base")
     args = parser.parse_args()
 
     os.makedirs(args.save_path, exist_ok=True)

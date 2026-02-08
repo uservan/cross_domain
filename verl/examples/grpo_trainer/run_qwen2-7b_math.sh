@@ -1,10 +1,10 @@
 set -x
 
 
-gsm8k_train_path=/scratch/pioneer/jobs/wxy320/verl/data/gsm8k/train.parquet
-gsm8k_test_path=/scratch/pioneer/jobs/wxy320/verl/data/gsm8k/test.parquet
-math_train_path=/scratch/pioneer/jobs/wxy320/verl/data/math/train.parquet
-math_test_path=/scratch/pioneer/jobs/wxy320/verl/data/math/test.parquet
+gsm8k_train_path=/scratch/pioneer/jobs/user/verl/data/gsm8k/train.parquet
+gsm8k_test_path=/scratch/pioneer/jobs/user/verl/data/gsm8k/test.parquet
+math_train_path=/scratch/pioneer/jobs/user/verl/data/math/train.parquet
+math_test_path=/scratch/pioneer/jobs/user/verl/data/math/test.parquet
 
 train_files="['$gsm8k_train_path', '$math_train_path']"
 test_files="['$gsm8k_test_path', '$math_test_path']"
@@ -48,4 +48,4 @@ nohup python3 -m verl.trainer.main_ppo \
     trainer.save_freq=400 \
     trainer.test_freq=10 \
     trainer.total_epochs=15 \
-    > /scratch/pioneer/jobs/wxy320/verl/log/qwen2_5_3b_function_rm_2.log 2>&1
+    > /scratch/pioneer/jobs/user/verl/log/qwen2_5_3b_function_rm_2.log 2>&1

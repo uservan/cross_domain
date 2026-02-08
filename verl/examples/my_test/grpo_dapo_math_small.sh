@@ -5,8 +5,8 @@
 #SBATCH --gres=gpu:4
 #SBATCH -n 48
 #SBATCH --mem=128G
-#SBATCH --output=/scratch/pioneer/jobs/wxy320/verl/slurm/qwen_rope_%A_%a.txt
-#SBATCH --error=/scratch/pioneer/jobs/wxy320/verl/slurm/qwen_rope_%A_%a.txt
+#SBATCH --output=/scratch/pioneer/jobs/user/verl/slurm/qwen_rope_%A_%a.txt
+#SBATCH --error=/scratch/pioneer/jobs/user/verl/slurm/qwen_rope_%A_%a.txt
 #SBATCH --time=13-00:00:00
 
 set -xeuo pipefail
@@ -77,10 +77,10 @@ overlong_penalty_factor=1.0
 
 # Paths and namings
 project_name='RL-GRPO'
-MODEL_PATH=/scratch/pioneer/jobs/wxy320/verl/model/Qwen3-4B/Qwen3-4B-0.7 # 
+MODEL_PATH=/scratch/pioneer/jobs/user/verl/model/Qwen3-4B/Qwen3-4B-0.7 # 
 SFT_MODEL=$(basename $MODEL_PATH)
 exp_name="${loss_mode}-${SFT_MODEL}-RL-MATH"
-CKPTS_DIR=/scratch/pioneer/jobs/wxy320/verl/model/${project_name}/${exp_name}
+CKPTS_DIR=/scratch/pioneer/jobs/user/verl/model/${project_name}/${exp_name}
 save_contents="['hf_model']"
 
 # Sampling params at rollouts
@@ -105,7 +105,7 @@ entropy_checkpointing=true # This enables entropy recomputation specifically for
 #     python examples/data_preprocess/gsm8k.py --local_save_dir /data/gsm8k/
 # fi
 
-DATA_DIR=/scratch/pioneer/jobs/wxy320/verl/data
+DATA_DIR=/scratch/pioneer/jobs/user/verl/data
 math_test_path=data/test_data/MATH-500.parquet
 aime24_test_path=data/test_data/aime24.parquet
 aime25_test_path=data/test_data/aime25.parquet
@@ -196,4 +196,4 @@ nohup python3 -m verl.trainer.main_ppo \
     trainer.rollout_data_dir=${DATA_DIR}/rollout_data/$project_name/$exp_name \
     trainer.resume_mode=auto \
     trainer.log_val_generations=2 \
-    > /scratch/pioneer/jobs/wxy320/verl/log/my_test/${exp_name}.log 2>&1
+    > /scratch/pioneer/jobs/user/verl/log/my_test/${exp_name}.log 2>&1

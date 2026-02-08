@@ -4,11 +4,11 @@ import pandas as pd
 from glob import glob
 from tqdm import tqdm
 from datasets import Dataset
-# /home/wxy320/ondemand/program/verl/data/train/enigama/train/binario/en/train.jsonl
-BASE_DIR = "/home/wxy320/ondemand/program/verl/data/train/enigama"
+# /home/user/ondemand/program/verl/data/train/enigama/train/binario/en/train.jsonl
+BASE_DIR = "/home/user/ondemand/program/verl/data/train/enigama"
 OUTPUT_TRAIN = "puzzle-train"
 OUTPUT_TEST  = "puzzle-test"
-OUTPUT_PATH = '/home/wxy320/ondemand/program/verl/data/train'
+OUTPUT_PATH = '/home/user/ondemand/program/verl/data/train'
 
 
 def pack_ground_truth(obj):

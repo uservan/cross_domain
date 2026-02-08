@@ -187,7 +187,7 @@ trainer:
   del_local_ckpt_after_load: False
 
   # Default local directory for saving checkpoints
-  default_local_dir: /scratch/pioneer/jobs/wxy320/verl/checkpoints/${trainer.project_name}/${trainer.experiment_name}
+  default_local_dir: /scratch/pioneer/jobs/user/verl/checkpoints/${trainer.project_name}/${trainer.experiment_name}
 
   # Maximum number of actor checkpoints to keep
   max_actor_ckpt_to_keep: null

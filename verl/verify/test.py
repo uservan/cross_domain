@@ -7,7 +7,7 @@ from vllm import LLM, SamplingParams
 from transformers import AutoTokenizer
 import pandas as pd
 
-project_root = '/home/wxy320/ondemand/program/verl'
+project_root = '/home/user/ondemand/program/verl'
 
 def get_category_data(category: str, split: str = "test", max_samples: int = -1):
     results = []
@@ -35,7 +35,7 @@ def main():
     parser.add_argument("--enable_thinking", action="store_true", default=False)
     parser.add_argument("--add_flag", action="store_true", default=False)
     parser.add_argument("--suffix", type=str, default='<start>')
-    parser.add_argument("--save_path", type=str, default="/scratch/pioneer/jobs/wxy320/expert/no_think_collect")
+    parser.add_argument("--save_path", type=str, default="/scratch/pioneer/jobs/user/expert/no_think_collect")
     args = parser.parse_args()
 
     save_path = os.path.join(
