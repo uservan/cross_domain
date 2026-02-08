@@ -1,0 +1,4 @@
+ct_cancer_pretreatment_input_list,ct_cancer_pretreatment_keyword_list,ct_cancer_pre_post_list,ct_cancer_changed_list,ct_cancer_diff_dict
+input1,kw1,"[1, 2]","['chg1', 'chg2']",{'diff1': 10}
+input2,kw2,"[3, 4]","['chg3', 'chg4']",{'diff2': 20}
+input3,kw3,"[5, 6]","['chg5', 'chg6']",{'diff3': 15}

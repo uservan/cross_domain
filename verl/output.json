@@ -1,0 +1,31 @@
+{
+    "output": {
+        "PaperTitle-01": {
+            "Page1": {
+                "Line1": "Introduction",
+                "Line2": "Written by John Smith",
+                "Line3": "Department of Paper",
+                "Line4": "Page 1 of 10"
+            },
+            "Page2": {
+                "Line1": "Literature Review",
+                "Line2": "Hip Debate",
+                "Line3": "Rights Researchers",
+                "Line4": "Subsequent Presentation"
+            },
+            "Page4": {
+                "Line1": "Implementation",
+                "Line2": "Proposed Increments",
+                "Line3": "Place of Applications",
+                "Line4": "Page 4 of 10"
+            },
+            "Page10": {
+                "Line1": "Summary",
+                "Line2": "March of over a Precipice",
+                "Line3": "Import of Computed Consequences",
+                "Line4": "Page 10 of 10"
+            }
+        },
+        "PaperTitle-02": {}
+    }
+}

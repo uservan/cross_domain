@@ -1,6 +1,7 @@
 verify/log
 verify/test_model.sh
 verify/test.sh
+verify/draw
 
 
 **/*.pt
@@ -126,11 +127,10 @@ ENV/
 
 
 # local logs
-logs
-log
-outputs
-.history
-data
-
-
-verl
+verl/logs
+verl/log
+verl/outputs
+verl/.history
+verl/data
+verl/verl.egg-info
+verl/docker
